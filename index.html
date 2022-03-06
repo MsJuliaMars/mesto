@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4 спринт. Проектная работа mesto</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body>
+    <div class="root">
+      <header class="header">
+        <img
+          class="header__logo"
+          src="./images/header__logo.svg"
+          alt="Логотип компании Mesto Russia"
+        />
+        <hr class="header__line" />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img
+            class="profile__avatar"
+            src="./images/avatar__kusto.png"
+            alt="Фото Жак-Ив Кусто"
+          />
+          <div class="profile__info">
+            <div class="profile__container">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+          <button
+            class="profile__add-button"
+            type="button"
+            aria-label="Сохранить изменения"
+          >
+            <img src="./images/profile__plus.svg" alt="знак плюс" />
+          </button>
+        </section>
+        <section class="card">
+          <ul class="card__items">
+            <li class="card__item">
+              <img
+                class="card__image"
+                src="./images/karachayevsk.png"
+                alt="Карачаевск, заброшенное здание"
+              />
+              <div class="card__group">
+                <h2 class="card__title">Карачаевск</h2>
+                <button
+                  class="card__like-button"
+                  type="button"
+                  aria-label="Сердце"
+                ></button>
+              </div>
+            </li>
+            <li class="card__item">
+              <img
+                class="card__image"
+                src="./images/elbrus.png"
+                alt="Гора Эльбрус"
+              />
+              <div class="card__group">
+                <h2 class="card__title">Гора Эльбрус</h2>
+                <button
+                  class="card__like-button"
+                  type="button"
+                  aria-label="Сердце"
+                ></button>
+              </div>
+            </li>
+            <li class="card__item">
+              <img
+                class="card__image"
+                src="./images/dombay.png"
+                alt="Красивый вид на горы Домбая"
+              />
+              <div class="card__group">
+                <h2 class="card__title">Домбай</h2>
+                <button
+                  class="card__like-button"
+                  type="button"
+                  aria-label="Сердце"
+                ></button>
+              </div>
+            </li>
+            <li class="card__item">
+              <img
+                class="card__image"
+                src="./images/karachayevsk.png"
+                alt="Карачаевск, заброшенное здание"
+              />
+              <div class="card__group">
+                <h2 class="card__title">Карачаевск</h2>
+                <button
+                  class="card__like-button"
+                  type="button"
+                  aria-label="Сердце"
+                ></button>
+              </div>
+            </li>
+            <li class="card__item">
+              <img
+                class="card__image"
+                src="./images/elbrus.png"
+                alt="Гора Эльбрус"
+              />
+              <div class="card__group">
+                <h2 class="card__title">Гора Эльбрус</h2>
+                <button
+                  class="card__like-button"
+                  type="button"
+                  aria-label="Сердце"
+                ></button>
+              </div>
+            </li>
+            <li class="card__item">
+              <img
+                class="card__image"
+                src="./images/dombay.png"
+                alt="Красивый вид на горы Домбая"
+              />
+              <div class="card__group">
+                <h2 class="card__title">Домбай</h2>
+                <button
+                  class="card__like-button"
+                  type="button"
+                  aria-label="Сердце"
+                ></button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+      </footer>
+
+      <div class="popup">
+        <form class="popup__form">
+          <button
+            class="popup__close-button"
+            type="button"
+            aria-label="Сохранить изменения"
+          ></button>
+          <div class="popup__container">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <input
+              type="text"
+              class="popup__text popup__name"
+              value="Жак-Ив Кусто"
+            />
+            <input
+              type="text"
+              class="popup__text popup__subtitle"
+              value="Исследователь океана"
+            />
+            <button
+              class="popup__save-button"
+              type="submit"
+              aria-label="Сохранить изменения"
+            >
+              Сохранить
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>

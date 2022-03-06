@@ -1,0 +1,12 @@
+.popup__name {
+  margin: -6px 22px 34px 21px;
+  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media screen and (min-width: 1024px) {
+  .popup__name {
+    margin: -6px 22px 34px 37px;
+  }
+}

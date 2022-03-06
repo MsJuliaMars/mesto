@@ -1,0 +1,12 @@
+.popup__subtitle {
+  margin: -5px 19px 52px 22px;
+  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media screen and (min-width: 1024px) {
+  .popup__subtitle {
+    margin: -5px 19px 52px 36px;
+  }
+}
