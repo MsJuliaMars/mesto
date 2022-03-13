@@ -1,0 +1,6 @@
+.popup__text_name {
+  margin-bottom: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

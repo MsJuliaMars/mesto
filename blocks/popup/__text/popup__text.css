@@ -1,4 +1,7 @@
 .popup__text {
+  max-width: 238px;
+  margin: 0;
+  margin-left: 22px;
   height: 27px;
   text-align: start;
   font-style: normal;
@@ -12,4 +15,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .popup__text {
+    max-width: 358px;
+    margin-left: 36px;
+  }
 }

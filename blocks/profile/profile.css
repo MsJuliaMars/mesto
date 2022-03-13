@@ -7,24 +7,17 @@
 }
 @media screen and (min-width: 768px) {
   .profile {
-    max-width: 730px;
-    max-height: 120px;
+    max-width: 581px;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 }
 @media screen and (min-width: 1024px) {
   .profile {
     min-width: 880px;
-    max-height: 120px;
     margin: 0px auto 51px auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
   }
 }
-@media screen and (min-width: 1280px) {
-  .profile {
-    margin: 0px 200px 51px 200px;
-  }
-}
+

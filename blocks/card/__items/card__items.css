@@ -1,6 +1,6 @@
 .card__items {
-  min-width: 282px;
-  margin: 0;
+  max-width: 282px;
+  margin: 0 auto;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
@@ -10,15 +10,14 @@
   .card__items {
     margin: 0px auto 66px auto;
     max-width: 730px;
-    grid-template-columns: repeat(2, minmax(282px, 1fr));
+    grid-template-columns: repeat(2, minmax(282px, 282px));
+    justify-content: center;
     gap: 17px;
   }
 }
 @media screen and (min-width: 1024px) {
   .card__items {
-    margin: 0px auto 66px auto;
     max-width: 880px;
     grid-template-columns: repeat(3, minmax(282px, 1fr));
-    gap: 17px;
   }
 }

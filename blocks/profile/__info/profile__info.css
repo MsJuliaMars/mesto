@@ -6,9 +6,9 @@
 }
 @media screen and (min-width: 768px) {
   .profile__info {
-    margin: 0px 32px 0px 0px;
+    margin: 0px 0px 0px 0px;
     padding: 0;
-    min-width: 336px;
+    max-width: 252px;
     align-self: center;
     align-items: flex-start;
     justify-content: flex-start;
@@ -16,11 +16,7 @@
 }
 @media screen and (min-width: 1024px) {
   .profile__info {
-    margin: 0px 212px 0px 0px;
-    padding: 0;
+    margin-right: 244px;
     min-width: 336px;
-    align-self: center;
-    align-items: flex-start;
-    justify-content: flex-start;
   }
 }
