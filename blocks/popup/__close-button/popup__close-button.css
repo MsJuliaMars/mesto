@@ -2,9 +2,9 @@
   background-image: url(../../../images/popup__close.svg);
   width: 20px;
   height: 20px;
-  position: absolute;
-  left: 281px;
-  top: 87px;
+  position: relative;
+  left: 261px;
+  top: -36px;
   z-index: 2;
   border: 0;
   background-color: transparent;
@@ -19,20 +19,7 @@
     width: 32px;
     height: 32px;
     background-repeat: no-repeat;
-    left: 607px;
-    top: 83px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .popup__close-button {
-    left: 735px;
-    top: 155px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .popup__close-button {
-    padding: 0;
-    left: 863px;
-    top: 155px;
+    left: 438px;
+    top: -40px;
   }
 }

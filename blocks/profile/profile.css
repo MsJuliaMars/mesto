@@ -16,8 +16,5 @@
   .profile {
     min-width: 880px;
     margin: 0px auto 51px auto;
-    display: flex;
-    flex-direction: row;
   }
 }
-

@@ -1,24 +1,23 @@
 .popup__text {
-  max-width: 238px;
   margin: 0;
+  margin-bottom: 32px;
   margin-left: 22px;
-  height: 27px;
-  text-align: start;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 0.8;
+  line-height: 17px;
+  padding-bottom: 6px;
   color: #000000;
   border: none;
-  border-bottom: 1px solid black;
-  border-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 80%;
+  outline: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .popup__text {
-    max-width: 358px;
     margin-left: 36px;
   }
 }
