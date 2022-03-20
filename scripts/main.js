@@ -8,11 +8,11 @@ let nameProfile = document.querySelector(".profile__title");
 let jobProfile = document.querySelector(".profile__subtitle");
 
 function close() {
-  popup.classList.remove("popup__opened");
+  popup.classList.remove("popup_opened");
 }
 
 function open() {
-  popup.classList.add("popup__opened");
+  popup.classList.add("popup_opened");
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
 }
