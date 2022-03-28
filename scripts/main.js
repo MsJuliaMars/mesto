@@ -39,8 +39,6 @@ const closePopupCard = document.querySelector(".popup__close-button_card");
 
 const cardItems = document.querySelector(".card__items");
 const popupForm = document.querySelector(".popup__form_card");
-const cardPicture = popupForm.querySelector(".card__image");
-const cardTitle = popupForm.querySelector(".card__title");
 
 const PopupPicture = document.querySelector(".popup-picture");
 const closePictureButton = document.querySelector(

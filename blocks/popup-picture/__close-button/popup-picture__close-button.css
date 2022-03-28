@@ -12,7 +12,7 @@
 }
 .popup-picture__close-button:hover {
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.6);
+  opacity: 0.6;
 }
 @media screen and (min-width: 768px) {
   .popup-picture__close-button {
