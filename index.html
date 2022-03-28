@@ -42,96 +42,28 @@
         </section>
         <section class="card">
           <ul class="card__items">
-            <li class="card__item">
-              <img
-                class="card__image"
-                src="./images/karachayevsk.png"
-                alt="Карачаевск, заброшенное здание"
-              />
-              <div class="card__group">
-                <h2 class="card__title">Карачаевск</h2>
+            <template class="card__template">
+              <li class="card__item">
                 <button
-                  class="card__like-button"
-                  type="button"
-                  aria-label="Сердце"
+                  class="card__del-button"
+                  type="submit"
+                  aria-label="Удалить карточку"
                 ></button>
-              </div>
-            </li>
-            <li class="card__item">
-              <img
-                class="card__image"
-                src="./images/elbrus.png"
-                alt="Гора Эльбрус"
-              />
-              <div class="card__group">
-                <h2 class="card__title">Гора Эльбрус</h2>
-                <button
-                  class="card__like-button"
-                  type="button"
-                  aria-label="Сердце"
-                ></button>
-              </div>
-            </li>
-            <li class="card__item">
-              <img
-                class="card__image"
-                src="./images/dombay.png"
-                alt="Красивый вид на горы Домбая"
-              />
-              <div class="card__group">
-                <h2 class="card__title">Домбай</h2>
-                <button
-                  class="card__like-button"
-                  type="button"
-                  aria-label="Сердце"
-                ></button>
-              </div>
-            </li>
-            <li class="card__item">
-              <img
-                class="card__image"
-                src="./images/karachayevsk.png"
-                alt="Карачаевск, заброшенное здание"
-              />
-              <div class="card__group">
-                <h2 class="card__title">Карачаевск</h2>
-                <button
-                  class="card__like-button"
-                  type="button"
-                  aria-label="Сердце"
-                ></button>
-              </div>
-            </li>
-            <li class="card__item">
-              <img
-                class="card__image"
-                src="./images/elbrus.png"
-                alt="Гора Эльбрус"
-              />
-              <div class="card__group">
-                <h2 class="card__title">Гора Эльбрус</h2>
-                <button
-                  class="card__like-button"
-                  type="button"
-                  aria-label="Сердце"
-                ></button>
-              </div>
-            </li>
-            <li class="card__item">
-              <img
-                class="card__image"
-                src="./images/dombay.png"
-                alt="Красивый вид на горы Домбая"
-              />
-              <div class="card__group">
-                <h2 class="card__title">Домбай</h2>
-                <button
-                  class="card__like-button"
-                  type="button"
-                  aria-label="Сердце"
-                ></button>
-              </div>
-            </li>
+                <img
+                  class="card__image"
+                  src=""
+                  alt="фотография красивого места"
+                />
+                <div class="card__group">
+                  <h2 class="card__title"></h2>
+                  <button
+                    class="card__like-button"
+                    type="button"
+                    aria-label="Сердце"
+                  ></button>
+                </div>
+              </li>
+            </template>
           </ul>
         </section>
       </main>
@@ -170,6 +102,58 @@
               Сохранить
             </button>
           </form>
+        </div>
+      </div>
+
+      <div class="popup popup__card">
+        <div class="popup__container">
+          <button
+            class="popup__close-button popup__close-button_card"
+            type="button"
+            aria-label="Сохранить изменения"
+          ></button>
+          <form class="popup__form popup__form_card" name="popup" method="get">
+            <h2 class="popup__title">Новое место</h2>
+            <input
+              type="text"
+              name="place"
+              class="popup__text popup__text_place"
+              id="popup-place"
+              value=""
+              placeholder="Название"
+            />
+            <input
+              type="url"
+              name="image"
+              class="popup__text popup__text_link"
+              id="popup-image"
+              value=""
+              placeholder="Ссылка на картинку"
+            />
+            <button
+              class="popup__save-button"
+              type="submit"
+              aria-label="Сохраняет и добавляет"
+            >
+              Создать
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="popup-picture">
+        <div class="popup-picture__container">
+          <button
+            class="popup-picture__close-button"
+            type="button"
+            aria-label="Закрыть окно"
+          ></button>
+          <img
+            class="popup-picture__image"
+            alt="Увеличенная фотография"
+            src=""
+          />
+          <h2 class="popup-picture__title"></h2>
         </div>
       </div>
     </div>
