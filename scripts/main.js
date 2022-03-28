@@ -33,7 +33,7 @@ let jobInput = document.getElementById("popup-subtitle");
 let nameProfile = document.querySelector(".profile__title");
 let jobProfile = document.querySelector(".profile__subtitle");
 
-const PopupCard = document.querySelector(".popup__card");
+const PopupCard = document.querySelector(".popup_card");
 const addButton = document.querySelector(".profile__add-button");
 const closePopupCard = document.querySelector(".popup__close-button_card");
 
