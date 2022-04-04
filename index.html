@@ -40,31 +40,8 @@
             aria-label="Сохранить изменения"
           ></button>
         </section>
-        <section class="card">
-          <ul class="card__items">
-            <template class="card__template">
-              <li class="card__item">
-                <button
-                  class="card__del-button"
-                  type="submit"
-                  aria-label="Удалить карточку"
-                ></button>
-                <img
-                  class="card__image"
-                 
-                  alt="фотография красивого места"
-                />
-                <div class="card__group">
-                  <h2 class="card__title"></h2>
-                  <button
-                    class="card__like-button"
-                    type="button"
-                    aria-label="Сердце"
-                  ></button>
-                </div>
-              </li>
-            </template>
-          </ul>
+        <section class="cards">
+          <ul class="cards__items"></ul>
         </section>
       </main>
       <footer class="footer">
@@ -105,7 +82,7 @@
         </div>
       </div>
 
-      <div class="popup popup_card">
+      <div class="popup popup_type_card">
         <div class="popup__container">
           <button
             class="popup__close-button popup__close-button_card"
@@ -121,6 +98,7 @@
               id="popup-place"
               value=""
               placeholder="Название"
+              required
             />
             <input
               type="url"
@@ -129,6 +107,7 @@
               id="popup-image"
               value=""
               placeholder="Ссылка на картинку"
+              required
             />
             <button
               class="popup__save-button"
@@ -141,21 +120,37 @@
         </div>
       </div>
 
-      <div class="popup-picture">
-        <div class="popup-picture__container">
+      <div class="popup popup_type_picture">
+        <div class="popup__picture-container">
           <button
-            class="popup-picture__close-button"
+            class="popup__picture-close"
             type="button"
             aria-label="Закрыть окно"
           ></button>
-          <img
-            class="popup-picture__image"
-            alt="Увеличенная фотография"
-          />
-          <h2 class="popup-picture__title"></h2>
+          <img class="popup__image" alt="" />
+          <h2 class="popup__picture-title"></h2>
         </div>
       </div>
     </div>
-    <script src="./scripts/main.js"></script>
+    <template id="card__template">
+      <li class="card">
+        <button
+          class="card__del-button"
+          type="submit"
+          aria-label="Удалить карточку"
+        ></button>
+        <img class="card__image" alt="" />
+        <div class="card__group">
+          <h2 class="card__title"></h2>
+          <button
+            class="card__like-button"
+            type="button"
+            aria-label="Сердце"
+          ></button>
+        </div>
+      </li>
+    </template>
+    <script src="./scripts/cards.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

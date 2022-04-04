@@ -1,4 +1,4 @@
-.popup-picture__title {
+.popup__picture-title {
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -9,7 +9,7 @@
   align-self: flex-start;
 }
 @media screen and (min-width: 768px) {
-  .popup-picture__title {
+  .popup__picture-title {
     margin: 10px 0px 0px 0px;
   }
 }

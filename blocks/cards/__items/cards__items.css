@@ -1,4 +1,4 @@
-.card__items {
+.cards__items {
   max-width: 282px;
   margin: 0 auto;
   padding: 0;
@@ -7,7 +7,7 @@
   gap: 20px;
 }
 @media screen and (min-width: 768px) {
-  .card__items {
+  .cards__items {
     margin: 0px auto 66px auto;
     max-width: 730px;
     grid-template-columns: repeat(2, minmax(282px, 282px));
@@ -16,7 +16,7 @@
   }
 }
 @media screen and (min-width: 1024px) {
-  .card__items {
+  .cards__items {
     max-width: 880px;
     grid-template-columns: repeat(3, minmax(282px, 1fr));
   }
