@@ -21,7 +21,6 @@ const closePictureButton = document.querySelector(".popup__picture-close");
 const fullscreenImage = document.querySelector(".popup__image");
 const fullscreenCaption = document.querySelector(".popupp__icture-title");
 const clonCard = document.getElementById("card__template");
-let popups = document.querySelectorAll(".popup");
 
 function createCard(cardName, cardLink) {
   const card = clonCard.content.firstElementChild.cloneNode(true);
