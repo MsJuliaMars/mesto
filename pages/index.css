@@ -47,5 +47,6 @@
 @import url(../blocks/popup/__picture-close/popup__picture-close.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__picture-title/__title/popup__picture-title.css);
+@import url(../blocks/popup/_overlay/popup_overlay.css);
 
 
