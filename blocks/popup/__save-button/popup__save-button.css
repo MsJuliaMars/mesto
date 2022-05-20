@@ -15,7 +15,9 @@
 }
 .popup__save-button:hover {
   opacity: 0.8;
+  color: #FFFFFF;
   cursor: pointer;
+  background-color: #000000;
 }
 @media screen and (min-width: 768px) {
   .popup__save-button {
@@ -26,4 +28,12 @@
     text-align: center;
     margin: 16px 36px 28px 36px;
   }
+}
+
+.popup__save-button_disabled {
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  opacity: 0.2;
 }

@@ -55,7 +55,7 @@
             type="button"
             aria-label="Сохранить изменения"
           ></button>
-          <form class="popup__form" name="popup" method="get">
+          <form class="popup__form" name="popup" method="get" novalidate>
             <h2 class="popup__title">Редактировать профиль</h2>
             <input
               type="text"
@@ -63,14 +63,22 @@
               class="popup__text"
               id="popup-name"
               value="Жак-Ив Кусто"
+              minlength="2"
+              maxlength="40"
+              required
             />
+            <span class="popup-name-error"></span>
             <input
               type="text"
               name="sublitle"
               class="popup__text"
               id="popup-subtitle"
               value="Исследователь океана"
+              minlength="2"
+              maxlength="200"
+              required
             />
+            <span class="popup-subtitle-error"></span>
             <button
               class="popup__save-button"
               type="submit"
@@ -89,7 +97,12 @@
             type="button"
             aria-label="Сохранить изменения"
           ></button>
-          <form class="popup__form popup__form_card" name="popup" method="get">
+          <form
+            class="popup__form popup__form_card"
+            name="popup"
+            method="get"
+            novalidate
+          >
             <h2 class="popup__title">Новое место</h2>
             <input
               type="text"
@@ -98,8 +111,11 @@
               id="popup-place"
               value=""
               placeholder="Название"
+              minlength="2"
+              maxlength="30"
               required
             />
+            <span class="popup-place-error"></span>
             <input
               type="url"
               name="image"
@@ -109,10 +125,11 @@
               placeholder="Ссылка на картинку"
               required
             />
+            <span class="popup-image-error"></span>
             <button
               class="popup__save-button"
               type="submit"
-              aria-label="Сохраняет и добавляет"
+              aria-label="Сохраняет и добавляет" 
             >
               Создать
             </button>
