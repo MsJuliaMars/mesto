@@ -1,14 +1,20 @@
-  const config = {
-    formSelector: 'popup__form',
-    inputSelector: 'popup__text',
-    submitButtonSelector: 'popup__save-button',
-    inactiveButtonClass: 'popup__save-button_disabled',
-    inputErrorClass: 'popup__text_type-error',
-    errorClass: 'popup__error_visible'
-  }; 
+const config = {
+  formSelector: "popup__form",
+  inputSelector: "popup__text",
+  submitButtonSelector: "popup__save-button",
+  inactiveButtonClass: "popup__save-button_disabled",
+  inputErrorClass: "popup__text_type-error",
+  errorClass: "popup__error_visible",
+};
 
 const showInputError = (inputConfig) => {
-    const {formElement, inputElement, errorMessage, inputErrorModifier, errorSelector} = inputConfig
+  const {
+    formElement,
+    inputElement,
+    errorMessage,
+    inputErrorModifier,
+    errorSelector,
+  } = inputConfig;
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   errorElement.textContent = errorMessage;
 
@@ -16,8 +22,12 @@ const showInputError = (inputConfig) => {
   inputElement.classList.add(inputErrorModifier);
 };
 
-const hideInputError = (formElement, inputElement, inputErrorModifier, errorSelector) => {
-
+const hideInputError = (
+  formElement,
+  inputElement,
+  inputErrorModifier,
+  errorSelector
+) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
 
   errorElement.classList.remove(errorSelector);
@@ -25,14 +35,28 @@ const hideInputError = (formElement, inputElement, inputErrorModifier, errorSele
   errorElement.textContent = "";
 };
 
-const checkInputValidity = (formElement, inputElement, inputErrorModifier, errorSelector) => {
-    // console.dir(inputElement);
-    // console.log(`input Element validity: ${inputElement.validity.valid}`);
+const checkInputValidity = (
+  formElement,
+  inputElement,
+  inputErrorModifier,
+  errorSelector
+) => {
   if (!inputElement.validity.valid) {
-      const errorMessage = inputElement.validationMessage;
-    showInputError({formElement, inputElement, errorMessage, inputErrorModifier, errorSelector});
+    const errorMessage = inputElement.validationMessage;
+    showInputError({
+      formElement,
+      inputElement,
+      errorMessage,
+      inputErrorModifier,
+      errorSelector,
+    });
   } else {
-    hideInputError(formElement, inputElement,inputErrorModifier, errorSelector);
+    hideInputError(
+      formElement,
+      inputElement,
+      inputErrorModifier,
+      errorSelector
+    );
   }
 };
 
@@ -58,30 +82,39 @@ const toggleButtonState = (inputList, saveButton, disabledSelector) => {
   }
 };
 
-
-const setEventListeners = (formElement, valid1) => {
-
-  const { inputSelector, submitButtonSelector, errorClass, inputErrorClass, inactiveButtonClass} = valid1;
-  const inputList = Array.from(formElement.querySelectorAll(`.${inputSelector}`));
+const setEventListeners = (formElement, validElement) => {
+  const {
+    inputSelector,
+    submitButtonSelector,
+    errorClass,
+    inputErrorClass,
+    inactiveButtonClass,
+  } = validElement;
+  const inputList = Array.from(
+    formElement.querySelectorAll(`.${inputSelector}`)
+  );
   const saveButton = formElement.querySelector(`.${submitButtonSelector}`);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
-        // console.log('da');
-      checkInputValidity(formElement, inputElement, inputErrorClass, errorClass);
+      checkInputValidity(
+        formElement,
+        inputElement,
+        inputErrorClass,
+        errorClass
+      );
       toggleButtonState(inputList, saveButton, inactiveButtonClass);
     });
   });
   toggleButtonState(inputList, saveButton, inactiveButtonClass);
 };
-const enableValidation = (validCofig) => {
-const {  formSelector } = validCofig;
+const enableValidation = (validConfiguration) => {
+  const { formSelector } = validConfiguration;
   const formList = Array.from(document.querySelectorAll(`.${formSelector}`));
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
-    setEventListeners(formElement, validCofig);
-
+    setEventListeners(formElement, validConfiguration);
   });
 };
 enableValidation(config);
