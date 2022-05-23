@@ -57,28 +57,30 @@
           ></button>
           <form class="popup__form" name="popup" method="get" novalidate>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <input
-              type="text"
-              name="name"
-              class="popup__text"
-              id="popup-name"
-              value="Жак-Ив Кусто"
-              minlength="2"
-              maxlength="40"
-              required
-            />
-            <span class="popup-name-error"></span>
-            <input
-              type="text"
-              name="sublitle"
-              class="popup__text"
-              id="popup-subtitle"
-              value="Исследователь океана"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <span class="popup-subtitle-error"></span>
+            <label class="popup__field">
+              <input
+                type="text"
+                name="name"
+                class="popup__text"
+                id="popup-name"
+                value="Жак-Ив Кусто"
+                minlength="2"
+                maxlength="40"
+                required />
+              <span class="popup-name-error"></span
+            ></label>
+            <label class="popup__field">
+              <input
+                type="text"
+                name="sublitle"
+                class="popup__text"
+                id="popup-subtitle"
+                value="Исследователь океана"
+                minlength="2"
+                maxlength="200"
+                required />
+              <span class="popup-subtitle-error"></span
+            ></label>
             <button
               class="popup__save-button"
               type="submit"
@@ -104,32 +106,36 @@
             novalidate
           >
             <h2 class="popup__title">Новое место</h2>
-            <input
-              type="text"
-              name="place"
-              class="popup__text popup__text_place"
-              id="popup-place"
-              value=""
-              placeholder="Название"
-              minlength="2"
-              maxlength="30"
-              required
-            />
-            <span class="popup-place-error"></span>
-            <input
-              type="url"
-              name="image"
-              class="popup__text popup__text_link"
-              id="popup-image"
-              value=""
-              placeholder="Ссылка на картинку"
-              required
-            />
-            <span class="popup-image-error"></span>
+            <label class="popup__field">
+              <input
+                type="text"
+                name="place"
+                class="popup__text popup__text_place"
+                id="popup-place"
+                value=""
+                placeholder="Название"
+                minlength="2"
+                maxlength="30"
+                required
+              />
+              <span class="popup-place-error"></span>
+            </label>
+            <label class="popup__field">
+              <input
+                type="url"
+                name="image"
+                class="popup__text popup__text_link"
+                id="popup-image"
+                value=""
+                placeholder="Ссылка на картинку"
+                required
+              />
+              <span class="popup-image-error"></span>
+            </label>
             <button
               class="popup__save-button"
               type="submit"
-              aria-label="Сохраняет и добавляет" 
+              aria-label="Сохраняет и добавляет"
             >
               Создать
             </button>
@@ -169,5 +175,6 @@
     </template>
     <script src="./scripts/cards.js"></script>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>

@@ -34,8 +34,6 @@ const imageLink = form.elements.image;
 const formElement = document.querySelector(".popup__form");
 const formInput = formElement.querySelector(".popup__text");
 const formError = formElement.querySelector(`.${formInput.id}-error`);
-const saveButton1 = formElement.querySelectorAll('.popup__save-button');
-
 
 //функция создания новой карточки
 function createCard(cardName, cardLink) {
@@ -95,17 +93,6 @@ function togglePopup(elementDom) {
   elementDom.classList.toggle("popup_opened");
 }
 
-// function setSubmitButtonState(isFormValid) {
-//   //установка состояния кнопки
-//   if (isFormValid) {
-//     saveButton.removeAttribute("disabled");
-//     saveButton.classList.remove("popup__save-button_disabled");
-//   } else {
-//     saveButton.setAttribute("disabled", true);
-//     saveButton.classList.add("popup__save-button_disabled");
-//   }
-// }
-
 // редактирование аватара пользователя
 function openProfilePopup() {
   togglePopup(popup);
@@ -143,79 +130,70 @@ form.addEventListener("submit", function (evt) {
   togglePopup(popup);
 });
 
-const showInputError = (formElement, inputElement, errorMessage) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  // inputElement.classList.add('popup__text_type_error');
-  errorElement.textContent = errorMessage;
+// const showInputError = (formElement, inputElement, errorMessage) => {
+//   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+//   // inputElement.classList.add('popup__text_type-error');
+//   errorElement.textContent = errorMessage;
   
-  errorElement.classList.add('popup__text_type_error');
-};
+//   errorElement.classList.add('popup__text_type-error');
+// };
 
-const hideInputError = (formElement, inputElement) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  // inputElement.classList.remove('popup__text_type_error');
-  errorElement.classList.remove('popup__text_type_error');
-  errorElement.textContent = '';
-};
+// const hideInputError = (formElement, inputElement) => {
+//   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+//   // inputElement.classList.remove('popup__text_type-error');
+//   errorElement.classList.remove('popup__text_type-error');
+//   errorElement.textContent = '';
+// };
 
-const checkInputValidity = (formElement, inputElement) => {
-  if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
-  } else {
-    hideInputError(formElement, inputElement);
-  }
-};
+// const checkInputValidity = (formElement, inputElement) => {
+//   if (!inputElement.validity.valid) {
+//     showInputError(formElement, inputElement, inputElement.validationMessage);
+//   } else {
+//     hideInputError(formElement, inputElement);
+//   }
+// };
 
-const hasInvalidInput = (inputList) => {
-  // проходим по этому массиву методом some
-  return inputList.some((inputElement) => {
-    return !inputElement.validity.valid;
-  })
-}; 
+// const hasInvalidInput = (inputList) => {
+//   // проходим по этому массиву методом some
+//   return inputList.some((inputElement) => {
+//     return !inputElement.validity.valid;
+//   })
+// }; 
 
-const toggleButtonState = (inputList, saveButton) => {
-  // Если есть хотя бы один невалидный инпут
-  if (hasInvalidInput(inputList)) {
-    // сделай кнопку неактивной
-    saveButton.classList.add('popup__save-button_disabled');
-    saveButton.setAttribute("disabled", true);
-  } else {
-    // иначе сделай кнопку активной
-    saveButton.classList.remove('popup__save-button_disabled');
-    saveButton.removeAttribute("disabled");
-  }
-};
+// const toggleButtonState = (inputList, saveButton) => {
+//   // Если есть хотя бы один невалидный инпут
+//   if (hasInvalidInput(inputList)) {
+//     // сделай кнопку неактивной
+//     saveButton.classList.add('popup__save-button_disabled');
+//     saveButton.setAttribute("disabled", true);
+//   } else {
+//     // иначе сделай кнопку активной
+//     saveButton.classList.remove('popup__save-button_disabled');
+//     saveButton.removeAttribute("disabled");
+//   }
+// };
 
-const setEventListeners = (formElement) => {
-  const inputList = Array.from(formElement.querySelectorAll('.popup__text'));
-  const saveButton = formElement.querySelector('.popup__save-button');
-  inputList.forEach((inputElement) => {
-    inputElement.addEventListener('input', function () {
-      checkInputValidity(formElement, inputElement);
-      toggleButtonState(inputList, saveButton);
-    });
-  });
-};
-const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll('.popup__form'));
-  formList.forEach((formElement) => {
-    formElement.addEventListener('submit', (evt) => {
-        evt.preventDefault();
-     });
-  setEventListeners(formElement);
-  });
-};
-enableValidation();
+// const setEventListeners = (formElement) => {
+//   const inputList = Array.from(formElement.querySelectorAll('.popup__text'));
+//   const saveButton = formElement.querySelector('.popup__save-button');
+//   inputList.forEach((inputElement) => {
+//     inputElement.addEventListener('input', function () {
+//       checkInputValidity(formElement, inputElement);
+//       toggleButtonState(inputList, saveButton);
+//     });
+//   });
+// };
+// const enableValidation = () => {
+//   const formList = Array.from(document.querySelectorAll('.popup__form'));
+//   formList.forEach((formElement) => {
+//     formElement.addEventListener('submit', (evt) => {
+//         evt.preventDefault();
+//      });
+//   setEventListeners(formElement);
+//   });
+// };
+// enableValidation();
 
-
-//клик по overlay
-// const imageModalWindow = document.querySelector('.popup_type_picture');
-// imageModalWindow.addEventListener('click', (evt) => {
-//   if (evt.target.classList.contains('popup_overlay') || evt.target.classList.contains('popup__picture-close')) {
-//       // закрываем только тогда, когда надо, т.е. только при том клике, которые происходит по нужному элементу
-//     closePopupOverlay(imageModalWindow);
-// }
-// });
 // слушатель закрытия popup по overlay
 const closePopupOverlay = (popup) => {
   popup.classList.remove("popup_opened");
@@ -257,10 +235,8 @@ function closeAllPopup(popup) {
 // все настройки передаются при вызове
 
 // enableValidation({
-//   formSelector: '.popup__form',
-//   inputSelector: '.popup__text',
-//   submitButtonSelector: '.popup__save-button',
-//   inactiveButtonClass: 'popup__save-button_disabled',
-//   inputErrorClass: 'popup__error',
-//   errorClass: 'popup__input_type_error'
-// }); 
+//   formInput: ".popup__form",
+//   inputSelector: ".popup__text",
+//   saveButton: ".popup__save-button",
+//   formError: `.${formInput.id}-error`,
+// });
