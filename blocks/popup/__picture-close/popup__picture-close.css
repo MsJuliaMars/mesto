@@ -8,7 +8,6 @@
   background-color: transparent;
   align-self: flex-end;
   margin-bottom: 16px;
-  margin-right: 20px;
 }
 .popup__picture-close:hover {
   cursor: pointer;

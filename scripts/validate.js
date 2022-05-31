@@ -107,6 +107,8 @@ const setEventListeners = (formElement, validElement) => {
   });
   toggleButtonState(inputList, saveButton, inactiveButtonClass);
 };
+
+
 const enableValidation = (validConfiguration) => {
   const { formSelector } = validConfiguration;
   const formList = Array.from(document.querySelectorAll(`.${formSelector}`));
@@ -117,4 +119,5 @@ const enableValidation = (validConfiguration) => {
     setEventListeners(formElement, validConfiguration);
   });
 };
+
 enableValidation(config);
