@@ -31,6 +31,7 @@ const fullscreenCaption = document.querySelector(".popupp__icture-title");
 const clonCard = document.getElementById("card__template");
 const image = popupPicture.querySelector(".popup__image");
 const imageTitle = popupPicture.querySelector(".popup__picture-title");
+const closeButtons = document.querySelectorAll(".popup__close");
 
 const inpNmae = document.querySelector(".popup__text_place");
 const inpLink = document.querySelector(".popup__text_link");
@@ -53,30 +54,20 @@ function addCard(evt) {
 }
 
 initialCards.forEach((initialCard) => {
-  //создаем экземпляр кдасса Card
-  const card = new Card(initialCard.name, initialCard.link, ".card__template");
-  //подготовка карточки к публикации
-  const cardElement = card.generateCard();
-  //добавляем в DOM
-  document.querySelector(".cards__items").append(cardElement);
+  const card = createCard(initialCard.name, initialCard.link);
+  cardItems.append(card);
 });
 
 export function openPopup(popup) {
   document.addEventListener("keydown", handleEscUp);
-  popup.addEventListener("click", handleOverlay);
+  popup.addEventListener("mousedown", handleOverlay);
   popup.classList.add("popup_opened");
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", handleEscUp);
-  popup.removeEventListener("click", handleOverlay);
-}
-
-// проверка кнопки на ее активность
-function makeButtonInactive(elementSaveButton) {
-  elementSaveButton.classList.add("popup__save-button_disabled");
-  elementSaveButton.disabled = true;
+  popup.removeEventListener("mousedown", handleOverlay);
 }
 
 // редактирование аватара пользователя
@@ -86,8 +77,12 @@ function openProfilePopup() {
   openPopup(popupProfile);
 }
 cardEditButton.addEventListener("click", openProfilePopup);
-buttonCloseProfile.addEventListener("click", (evt) => {
-  closePopup(popupProfile);
+
+closeButtons.forEach((button) => {
+  // находим 1 раз ближайший к крестику попап
+  const popup = button.closest(".popup");
+  // устанавливаем обработчик закрытия на крестик
+  button.addEventListener("click", () => closePopup(popup));
 });
 
 const formValidators = {};
@@ -98,13 +93,8 @@ Array.from(document.forms).forEach((formElement) => {
 
 addButton.addEventListener("click", (evt) => {
   addCardForm.reset();
-  makeButtonInactive(elementSaveButton);
   formValidators[addCardForm.name].clearForm();
   openPopup(popupCard);
-});
-
-buttonCloseCard.addEventListener("click", (evt) => {
-  closePopup(popupCard);
 });
 
 addCardForm.addEventListener("submit", addCard);
@@ -127,9 +117,6 @@ const handleOverlay = (evt) => {
   }
 };
 
-closePictureButton.addEventListener("click", (evt) => {
-  closePopup(popupPicture);
-});
 const ESC_KEY = "Escape";
 const handleEscUp = (evt) => {
   if (evt.key === ESC_KEY) {

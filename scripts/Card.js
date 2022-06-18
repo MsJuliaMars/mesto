@@ -28,8 +28,9 @@ class Card {
 
     // Добавим данные
     this._element.querySelector(".card__title").textContent = this._name;
-    this._element.querySelector(".card__image").src = this._link;
-    this._element.querySelector(".card__image").alt = this._name;
+    this._cardImage = this._element.querySelector(".card__image");
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
 
     this._delButton = this._element.querySelector(".card__del-button");
     this._likeButton = this._element.querySelector(".card__like-button");
@@ -39,9 +40,7 @@ class Card {
   }
 
   _handleLikeButtonClick() {
-    this._element
-      .querySelector(".card__like-button")
-      .classList.toggle("card__like-button_active");
+    this._likeButton.classList.toggle("card__like-button_active");
   }
 
   _openPicture() {
