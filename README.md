@@ -20,9 +20,12 @@
 * валидация форм
 * установка локального сервера
 * создание классов Card и FormValidator
+* деструктуризация
+* привязка this
+* сборка проекта (Webpack)
 
 *Технологии и функционал:*
-Flexbox,Grid Layout, Positioning Elements, Animation and Transform using CSS, Iframe, BEM Methodology, File Structure and File Paths (Nested BEM), Git, JS, DOM
+Flexbox,Grid Layout, Positioning Elements, Animation and Transform using CSS, Iframe, BEM Methodology, File Structure and File Paths (Nested BEM), Git, JS, DOM, Webpack
 
 Разработка интерфейса для разных устройств.
 
@@ -34,8 +37,7 @@ git clone https://msjuliamars.github.io/mesto/
 ```
 
 ### *Возможня доработка проекта*
-1. технология Webpack
-3. создание формы обратной связи
+1. создание формы обратной связи
 
 
 #### __Чеклисты__
@@ -43,3 +45,4 @@ git clone https://msjuliamars.github.io/mesto/
 * [sprint-5](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-5.pdf)
 * [sprint-6](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-6.pdf)
 * [sprint-7](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-7.pdf)
+* [sprint-8](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-8.pdf)

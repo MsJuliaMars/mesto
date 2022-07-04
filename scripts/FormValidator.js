@@ -62,12 +62,6 @@ class FormValidator {
   };
 
   enableValidation = () => {
-    // const inputList = Array.from(
-    //   this._form.querySelectorAll(`.${this._inputSelector}`)
-    // );
-    // const saveButton = this._form.querySelector(
-    //   `.${this._submitButtonSelector}`
-    // );
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
@@ -77,18 +71,12 @@ class FormValidator {
     this._toggleButtonState(this._inputList, this._saveButton);
   };
 
-  clearForm() {
-    // const inputList = Array.from(
-    //   this._form.querySelectorAll(`.${this._inputSelector}`)
-    // );
-    // const saveButton = this._form.querySelector(
-    //   `.${this._submitButtonSelector}`
-    // );
+  clearForm = () => {
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
     this._toggleButtonState(this._inputList, this._saveButton);
-  }
+  };
 }
 
 export default FormValidator;

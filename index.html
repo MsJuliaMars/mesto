@@ -56,7 +56,7 @@
             aria-label="Сохранить изменения"
           ></button>
           <form
-            class="popup__form"
+            class="popup__form popup__form_profile"
             name="popup-profile"
             method="get"
             novalidate
@@ -65,26 +65,26 @@
             <label class="popup__field">
               <input
                 type="text"
-                name="name"
-                class="popup__text"
-                id="popup-name"
+                name="title"
+                class="popup__text popup__text_name"
+                id="popup-title"
                 value="Жак-Ив Кусто"
                 minlength="2"
                 maxlength="40"
                 required />
-              <span class="popup-name-error"></span
+              <span class="popup-title-error"></span
             ></label>
             <label class="popup__field">
               <input
                 type="text"
                 name="sublitle"
-                class="popup__text"
-                id="popup-subtitle"
+                class="popup__text popup__text_job"
+                id="popup-job"
                 value="Исследователь океана"
                 minlength="2"
                 maxlength="200"
                 required />
-              <span class="popup-subtitle-error"></span
+              <span class="popup-job-error"></span
             ></label>
             <button
               class="popup__save-button"
@@ -102,7 +102,7 @@
           <button
             class="popup__close popup__close-button  popup__close-button_card"
             type="button"
-            aria-label="Сохранить изменения"
+            aria-label="Закрыть попап"
           ></button>
           <form
             class="popup__form popup__form_card"
@@ -116,26 +116,26 @@
                 type="text"
                 name="place"
                 class="popup__text popup__text_place"
-                id="popup-place"
+                id="popup-name"
                 value=""
                 placeholder="Название"
                 minlength="2"
                 maxlength="30"
                 required
               />
-              <span class="popup-place-error"></span>
+              <span class="popup-name-error"></span>
             </label>
             <label class="popup__field">
               <input
                 type="url"
                 name="image"
                 class="popup__text popup__text_link"
-                id="popup-image"
+                id="popup-link"
                 value=""
                 placeholder="Ссылка на картинку"
                 required
               />
-              <span class="popup-image-error"></span>
+              <span class="popup-link-error"></span>
             </label>
             <button
               class="popup__save-button"
