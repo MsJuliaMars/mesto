@@ -48,7 +48,6 @@ export default class PopupWithForm extends Popup {
 
   _handleSubmit = (evt) => {
     evt.preventDefault();
-    const values = this._getInputValues();
 
     this._submitCallBack(this._getInputValues());
 
@@ -73,5 +72,6 @@ export default class PopupWithForm extends Popup {
 
   close() {
     super.close();
+    this._formElement.reset();
   }
 }

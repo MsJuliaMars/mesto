@@ -13,7 +13,7 @@ export default class Section {
   }
 
   // Отрисовка всех элементов
-  renderingAll() {
+  renderItems() {
     this._items.forEach((item) => {
       this.addItem(item);
     });

@@ -11,16 +11,17 @@ import {
   profilePopupSelector,
   imagePopupSelector,
   viewPopupConfig,
-} from "./scripts/constants.js";
+} from "../utils/constants.js"; 
 
-import FormValidator from "./scripts/FormValidator.js";
-import Card from "./scripts/Card.js";
-import PopupWithForm from "./scripts/PopupWithForm.js";
-import Section from "./scripts/Section.js";
-import UserInfo from "./scripts/UserInfo.js";
-import PopupWithImage from "./scripts/PopupWithImage.js";
+import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 
-import './pages/index.css';
+import '../pages/index.css';
+
 const profileEditButton = document.querySelector(".profile__edit-button");
 const addCardButton = document.querySelector(".profile__add-button");
 
@@ -64,7 +65,7 @@ const newCardPopup = new PopupWithForm(
   newPlaceFormName,
   popupConfiguration,
   formConfiguration,
-  formValidators[newPlaceFormName].clearForm,
+  formValidators[newPlaceFormName].resetValidation,
   handleCardSubmit
 );
 newCardPopup.setEventListeners();
@@ -80,7 +81,7 @@ const profilePopup = new PopupWithForm(
   profileFormName,
   popupConfiguration,
   formConfiguration,
-  formValidators[profileFormName].clearForm,
+  formValidators[profileFormName].resetValidation,
   handleSubmitProfile,
   user.getUserInfo
 );
@@ -93,6 +94,6 @@ const handleNewCardPopupOpen = () => {
   newCardPopup.open();
 };
 
-cardsContainer.renderingAll();
+cardsContainer.renderItems();
 addCardButton.addEventListener("click", handleNewCardPopupOpen);
 profileEditButton.addEventListener("click", handleProfilePopupOpen);

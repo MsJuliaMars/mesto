@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "production",
-  entry: "./src/scripts/index.js", // string | object | array
+  entry: "./src/pages/index.js", // string | object | array
   // defaults to ./src
   // Here the application starts executing
   // and webpack starts bundling
@@ -28,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.html?$/,
-        use: ['html-loader'],
+        use: ["html-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
