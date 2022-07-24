@@ -34,19 +34,20 @@ export const config = {
 };
 
 export const formConfiguration = {
-  inputSelector: "popup__text",
-  submitButtonSelector: "popup__save-button",
-  formSelector: "popup__form",
+  inputSelector: ".popup__text",
+  submitButtonSelector: ".popup__save-button",
+  formSelector: ".popup__form",
 };
 
 export const popupConfiguration = {
   activeModifier: "popup_opened",
-  closeButtonSelector: "popup__close",
+  closeButtonSelector: ".popup__close",
 };
 
 export const profileConfiguration = {
   userNameSelector: "profile__title",
   jobSelector: "profile__subtitle",
+  avatarSelector: "profile__avatar",
 };
 
 export const viewPopupConfig = {
@@ -54,10 +55,28 @@ export const viewPopupConfig = {
   captionSelector: "popup__picture-title",
 };
 
+export const confirmButtonConfig = {
+  captionNormal: "Да",
+  captionActive: "Удаление...",
+};
+
+export const newCardButtonConfig = {
+  captionNormal: "Создать",
+  captionActive: "Сохранение...",
+};
+
+export const saveButtonConfig = {
+  captionNormal: "Сохранить",
+  captionActive: "Сохранение...",
+};
+
 export const ESC_KEY = "Escape";
 export const cardsContainerSelector = "cards__items";
-export const newPlacePopupSelector = "popup_type_card";
-export const profilePopupSelector = "popup_type_profile";
-export const imagePopupSelector = "popup_type_picture";
+export const newPlacePopupSelector = ".popup_type_card";
+export const profilePopupSelector = ".popup_type_profile";
+export const imagePopupSelector = ".popup_type_picture";
+export const editAvatarPopupSelector = ".popup_type_edit-avatar";
+export const confirmPopupSelector = ".popup_type_delete";
+export const editAvatarFormName = "popup-avatar";
 export const newPlaceFormName = "popup-mesto";
 export const profileFormName = "popup-profile";

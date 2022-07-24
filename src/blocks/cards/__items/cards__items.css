@@ -12,6 +12,7 @@
     max-width: 730px;
     grid-template-columns: repeat(2, minmax(282px, 282px));
     justify-content: center;
+    row-gap: 17px;
     gap: 17px;
   }
 }

@@ -5,11 +5,12 @@ class Popup {
     this._activeModifier = popupConfig.activeModifier;
     this._closeButtonSelector = popupConfig.closeButtonSelector;
 
-    this._popup = document.querySelector(`.${this._popupSelector}`);
+    this._popup = document.querySelector(this._popupSelector);
 
-    this._popupCloseButton = this._popup.querySelector(
-      `.${this._closeButtonSelector}`
-    );
+    this._popupCloseButton = this._popup.querySelector(this._closeButtonSelector);
+
+    this.close = this.close.bind(this);
+    this.open = this.open.bind(this);
   }
 
   // Содержит логику закрытия попапа клавишей Esc
