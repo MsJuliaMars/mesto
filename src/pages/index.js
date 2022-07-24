@@ -161,7 +161,7 @@ editAvatarPopup.setEventListeners();
 function handleAvatarSubmit(data, toggleBtnCallback, closePopupCallback) {
   toggleBtnCallback(true);
   api
-    .editAvatar(data.link)
+    .editAvatar(data.links)
     .then((res) => {
       user.setUserInfo(res);
       closePopupCallback();
