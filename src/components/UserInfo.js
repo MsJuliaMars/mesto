@@ -5,10 +5,9 @@ export default class UserInfo {
     this._jobSelector = jobSelector;
     this._avatarSelector = avatarSelector;
     this._userNameElement = document.querySelector(
-      `.${this._userNameSelector}`
-    );
-    this._jobElement = document.querySelector(`.${this._jobSelector}`);
-    this._avatarElement = document.querySelector(`.${this._avatarSelector}`);
+      this._userNameSelector);
+    this._jobElement = document.querySelector(this._jobSelector);
+    this._avatarElement = document.querySelector(this._avatarSelector);
   }
   // возвращает объект с данными пользователя
   getUserInfo = () => {
@@ -24,9 +23,6 @@ export default class UserInfo {
     this._userNameElement.textContent = data?.name || "";
     this._jobElement.textContent = data?.about || "";
     this._avatarElement.src = data?.avatar || "";
-    this._name = data.name;
-    this._about = data.about;
-    this._avatar = data.avatar;
     this._id = data._id;
   }
   // Возвращает объект с аватаром пользователя

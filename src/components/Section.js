@@ -2,9 +2,8 @@ export default class Section {
   // Отрисовка элементов на странице
   constructor({ renderer }, containerSelector) {
     this._containerSelector = containerSelector;
-    this._container = document.querySelector(`.${this._containerSelector}`);
+    this._container = document.querySelector(this._containerSelector);
     this._renderer = renderer; // Функция создания карточки createCard
-    //console.log(this._renderer);
   }
 
   // Принимает DOM-элемент и добавляет его в контейнер
@@ -15,7 +14,6 @@ export default class Section {
   // Отрисовка всех элементов
   renderItems(items) {
     items.forEach((item) => {
-      // console.log(item);
       this.addItem(item);
     });
   }

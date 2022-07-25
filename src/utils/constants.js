@@ -26,8 +26,8 @@ export const initialCards = [
 ];
 
 export const config = {
-  inputSelector: "popup__text",
-  submitButtonSelector: "popup__save-button",
+  inputSelector: ".popup__text",
+  submitButtonSelector: ".popup__save-button",
   inactiveButtonClass: "popup__save-button_disabled",
   inputErrorClass: "popup__text_type-error",
   errorClass: "popup__error_visible",
@@ -45,14 +45,14 @@ export const popupConfiguration = {
 };
 
 export const profileConfiguration = {
-  userNameSelector: "profile__title",
-  jobSelector: "profile__subtitle",
-  avatarSelector: "profile__avatar",
+  userNameSelector: ".profile__title",
+  jobSelector: ".profile__subtitle",
+  avatarSelector: ".profile__avatar",
 };
 
 export const viewPopupConfig = {
-  imageSelector: "popup__image",
-  captionSelector: "popup__picture-title",
+  imageSelector: ".popup__image",
+  captionSelector: ".popup__picture-title",
 };
 
 export const confirmButtonConfig = {
@@ -71,7 +71,7 @@ export const saveButtonConfig = {
 };
 
 export const ESC_KEY = "Escape";
-export const cardsContainerSelector = "cards__items";
+export const cardsContainerSelector = ".cards__items";
 export const newPlacePopupSelector = ".popup_type_card";
 export const profilePopupSelector = ".popup_type_profile";
 export const imagePopupSelector = ".popup_type_picture";

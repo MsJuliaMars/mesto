@@ -30,7 +30,7 @@ import "../pages/index.css";
 import Api from "../components/Api.js";
 
 const profileEditButton = document.querySelector(".profile__edit-button");
-const addCardButton = document.querySelector(".profile__add-button");
+const cardButtonAdd = document.querySelector(".profile__add-button");
 const profileAvatarButton = document.querySelector(".profile__avarat-btn");
 
 const options = {
@@ -42,11 +42,6 @@ const options = {
 };
 //API
 const api = new Api({ url: options.url, headers: options.headers });
-
-// Загрузка информации о пользователе с сервера
-api.uploadingUserInf().then((res) => {
-  user.setUserInfo(res);
-});
 
 const viewPopup = new PopupWithImage(
   imagePopupSelector,
@@ -71,15 +66,15 @@ function handleDeleteCard(
     .deleteCard(id)
     .then(() => {
       removeCardCallback();
+      closeConfirmCallback();
     })
     .catch(console.log)
     .finally(() => {
-      closeConfirmCallback();
       toggleBtnCallback(false);
     });
 }
 
-const confirmDeletePopup = new PopupWithConfirmation(
+const popupConfirmDelete = new PopupWithConfirmation(
   confirmPopupSelector,
   popupConfiguration,
   formConfiguration.formSelector,
@@ -87,12 +82,12 @@ const confirmDeletePopup = new PopupWithConfirmation(
   handleDeleteCard,
   confirmButtonConfig
 );
-confirmDeletePopup.setEventListeners();
+popupConfirmDelete.setEventListeners();
 
 const newCardCallbacks = {
   handleOpenCallback: viewPopup.open,
   handleLikeCallback: handleLikeCard,
-  handleDeleteCallback: confirmDeletePopup.open,
+  handleDeleteCallback: popupConfirmDelete.open,
 };
 // функция создания новой карточки
 function createCard(item) {
@@ -111,7 +106,6 @@ const cardsContainer = new Section(
 
 // обработчик добавление новой карточки / отправка формы место
 function handleCardSubmit(item, toggleBtnCallback, closePopupCallback) {
-  console.dir(item);
   toggleBtnCallback(true);
   api
     .setCard(item)
@@ -146,7 +140,7 @@ newCardPopup.setEventListeners();
 const user = new UserInfo(profileConfiguration);
 
 // Изменение аватара пользователя
-const editAvatarPopup = new PopupWithForm(
+const popupEditAvatar = new PopupWithForm(
   editAvatarPopupSelector,
   editAvatarFormName,
   popupConfiguration,
@@ -155,7 +149,7 @@ const editAvatarPopup = new PopupWithForm(
   handleAvatarSubmit,
   saveButtonConfig
 );
-editAvatarPopup.setEventListeners();
+popupEditAvatar.setEventListeners();
 
 // Обработчик отправки формы (редактирование аватара)
 function handleAvatarSubmit(data, toggleBtnCallback, closePopupCallback) {
@@ -174,7 +168,7 @@ function handleAvatarSubmit(data, toggleBtnCallback, closePopupCallback) {
 function handleSubmitProfile(data, toggleBtnCallback, closePopupCallback) {
   toggleBtnCallback(true);
   api
-    .editingProfile(data)
+    .editProfile(data)
     .then((data) => {
       user.setUserInfo(data);
       closePopupCallback();
@@ -204,10 +198,10 @@ const handleNewCardPopupOpen = () => {
 };
 
 const handleEditAvaPopupOpen = () => {
-  editAvatarPopup.open();
+  popupEditAvatar.open();
 };
 
-addCardButton.addEventListener("click", handleNewCardPopupOpen);
+cardButtonAdd.addEventListener("click", handleNewCardPopupOpen);
 profileEditButton.addEventListener("click", handleProfilePopupOpen);
 profileAvatarButton.addEventListener("click", handleEditAvaPopupOpen);
 

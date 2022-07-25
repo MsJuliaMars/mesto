@@ -66,8 +66,6 @@ export default class PopupWithForm extends Popup {
       this.toggleSubmitBtnCaption,
       this.close
     );
-
-    this.close();
   };
 
   // Добавляет слушатель клика иконке закрытия попапа
@@ -78,11 +76,7 @@ export default class PopupWithForm extends Popup {
 
   open() {
     if (this._getCallback) {
-      console.log("PopupWithForm.open()\nthis._getCallback():");
-      console.dir(this._getCallback());
       this._setInputValues(this._getCallback());
-    } else {
-      this._formElement.reset();
     }
     this._clearErrorCallback();
     super.open();

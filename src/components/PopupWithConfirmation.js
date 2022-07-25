@@ -29,10 +29,6 @@ class PopupWithConfirmation extends Popup {
   }
 
   toggleSubmitBtnCaption(state)  {
-    console.log(`PopupWithConfirm.toggleSubmitButtonCaption(${state}).\nthis:`);
-    console.dir(this);
-    console.log('PopupWithConfirm._submitButton:');
-    console.dir(this._submitButton);
     this._submitButton.textContent = state
       ? this._captionActive
       : this._captionNormal;

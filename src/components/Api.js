@@ -32,8 +32,7 @@ export default class Api {
   }
 
   // Редактирование профиля
-  editingProfile(data) {
-    console.dir(data);
+  editProfile(data) {
     return fetch(`${this._url}/users/me`, {
       method: "PATCH",
       headers: this._headers,
@@ -54,7 +53,7 @@ export default class Api {
   }
 
   // Добавление новой карточки
-  addingNewCard(card) {
+  addNewCard(card) {
     return fetch(`${this._url}/cards`, {
       method: "POST",
       headers: this._headers,
