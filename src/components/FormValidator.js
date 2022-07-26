@@ -37,16 +37,16 @@ class FormValidator {
       this._hideInputError(inputElement);
     }
   };
-  _hasInvalidInput = (inputList) => {
+  _hasInvalidInput = () => {
     // проходим по этому массиву методом some
-    return inputList.some((inputElement) => {
+    return this._inputList.some((inputElement) => {
       return !inputElement.validity.valid;
     });
   };
 
   _toggleButtonState = () => {
     // Если есть хотя бы один невалидный инпут
-    if (this._hasInvalidInput(this._inputList)) {
+    if (this._hasInvalidInput()) {
       // сделай кнопку неактивной
       this._saveButton.classList.add(this._inactiveButtonClass);
       // saveButton.setAttribute("disabled", true);
